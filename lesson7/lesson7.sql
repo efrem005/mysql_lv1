@@ -18,7 +18,7 @@ SELECT
     COUNT(*) AS 'ORDER_COUNT'
 FROM
     users AS u
-        RIGHT JOIN orders o ON u.id = o.user_id
+        JOIN orders o ON u.id = o.user_id
 GROUP BY u.name;
 
 
@@ -60,7 +60,7 @@ SELECT prod.id,
        cat.name AS catalog
 FROM
      products AS prod
-         JOIN catalogs AS cat ON prod.catalog_id = cat.id;
+         LEFT JOIN catalogs AS cat ON prod.catalog_id = cat.id;
 
 /*
 (по желанию) Пусть имеется таблица рейсов flights (id, from, to) и таблица городов cities (label, name).
