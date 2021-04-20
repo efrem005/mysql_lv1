@@ -85,9 +85,9 @@ BEGIN
     CASE
         WHEN CURDATE() BETWEEN '06:00:00' AND '12:00:00' THEN
             SELECT 'Доброе утро';
-        WHEN CURDATE() BETWEEN '12:00:00' AND '18:00:00' THEN
+        WHEN CURTIME() BETWEEN '12:00:00' AND '18:00:00' THEN
             SELECT 'Добрый день';
-        WHEN CURDATE() BETWEEN '18:00:00' AND '00:00:00' THEN
+        WHEN CURTIME() BETWEEN '18:00:00' AND '00:00:00' THEN
             SELECT 'Добрый вечер';
         ELSE
             SELECT 'Доброй ночи';
@@ -95,7 +95,11 @@ BEGIN
 end //
 DELIMITER ;
 
+
+
 CALL hello();
+
+
 
 /*
 В таблице products есть два текстовых поля: name с названием товара и description с его описанием.
